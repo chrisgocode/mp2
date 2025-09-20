@@ -7,7 +7,7 @@ export const getRandomPokemon: (usedNumbers?: number[]) => number = (
 ) => {
   const pokedexNumber: number = Math.floor(Math.random() * MAX_DEX_NUMBER) + 1;
 
-  if (usedNumbers?.includes(pokedexNumber)) return pokedexNumber;
+  if (!usedNumbers?.includes(pokedexNumber)) return pokedexNumber;
 
   return getRandomPokemon(usedNumbers);
 };
